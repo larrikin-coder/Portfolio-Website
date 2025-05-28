@@ -18,7 +18,7 @@ function App() {
           height: "100vh",
         }}
       >
-      <PacmanLoader/>
+        <PacmanLoader color="#7739c7" />
       </div>
     );
   }
