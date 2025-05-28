@@ -2,6 +2,7 @@ import { useState,useEffect} from 'react';
 import './App.css';
 import { PacmanLoader } from 'react-spinners';
 function App() {
+  //Loading Screen
   let [loading, setLoading] = useState(true);
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000);
@@ -23,8 +24,8 @@ function App() {
     );
   }
   return (
-    <div className="App">
-    Welcome
+    <div className="AppHeader">
+    larrikin-coder
     </div>
   );
 }
