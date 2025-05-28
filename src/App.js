@@ -1,6 +1,13 @@
 import { useState,useEffect} from 'react';
 import './App.css';
 import { PacmanLoader } from 'react-spinners';
+import Navbar from './components/Navbar';
+
+
+
+
+
+
 function App() {
   //Loading Screen
   let [loading, setLoading] = useState(true);
@@ -25,7 +32,7 @@ function App() {
   }
   return (
     <div className="AppHeader">
-    larrikin-coder
+      <Navbar />
     </div>
   );
 }
