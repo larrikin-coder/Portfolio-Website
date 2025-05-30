@@ -1,4 +1,6 @@
 import React from 'react';
+ 
+
 
 const Navbar = () => {
   return (
@@ -46,7 +48,7 @@ const Navbar = () => {
               <a className="nav-link disabled" aria-disabled="true">Disabled</a>
             </li>
           </ul>
-          <button className='btn'><img src="/src/assets/file.svg" alt="img" className="d-inline-block align-text-top"></img></button>
+          <button className='btn'><img src='/assets/icons8-download-48.png' alt="img" className="d-inline-block align-text-top" height='32px' width='32px'/></button>
         </div>
       </div>
     </nav>
