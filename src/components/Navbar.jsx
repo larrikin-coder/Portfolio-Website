@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">larrikin-coder</a>
+        <a className="navbar-brand d-inline-block align-text-top fs-4" href="#"><span className='me-2'><img className='d-inline-block align-text-top' src="/assets/github icon.png" alt="" width='32px' height="32px" /></span>larrikin-coder</a>
         <button
           className="navbar-toggler"
           type="button"
