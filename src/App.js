@@ -2,7 +2,7 @@ import { useState,useEffect} from 'react';
 import './App.css';
 import { PacmanLoader } from 'react-spinners';
 import Navbar from './components/Navbar';
-
+import Belowbar from './components/Belowbar';
 
 
 
@@ -33,6 +33,7 @@ function App() {
   return (
     <div className="AppHeader">
       <Navbar />
+      <Belowbar />
     </div>
   );
 }
