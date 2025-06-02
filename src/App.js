@@ -3,12 +3,15 @@ import './App.css';
 import { PacmanLoader } from 'react-spinners';
 import Navbar from './components/Navbar';
 import Belowbar from './components/Belowbar';
-
+import Card from './components/Card';
+import Hero from './components/Hero';
 
 
 
 
 function App() {
+  //active state for markdown content
+  const [activePath, setActivePath] = useState('/markdown/about.md');
   //Loading Screen
   let [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -34,6 +37,8 @@ function App() {
     <div className="AppHeader">
       <Navbar />
       <Belowbar />
+      <Card />
+      <Hero activePath={activePath} setActivePath={setActivePath}/>
     </div>
   );
 }
