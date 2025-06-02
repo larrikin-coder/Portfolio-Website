@@ -18,11 +18,11 @@ const Hero = ({ activePath, setActivePath }) => {
       {/* Profile Section */}
       <div className="col-md-4 bg-secondary p-4 d-flex flex-column align-items-center text-center">
         <img
-          src="assets/icon.jpg"
+          src="assets/icon.png"
           alt="Profile"
           className="rounded-circle mb-3"
-          width="120"
-          height="120"
+          width="296"
+          height="296"
         />
         <h3>Shaurya Thapliyal</h3>
         <p className="text-muted">@larrikin-coder</p>
