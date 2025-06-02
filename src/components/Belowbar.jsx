@@ -1,4 +1,4 @@
-const belowBar=() => {
+const belowBar=({setActivePath}) => {
     return(
         <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
         <div className="container-fluid">
@@ -8,19 +8,31 @@ const belowBar=() => {
             </button> */}
             <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
-                <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Overview</a>
-                </li>
-                <li className="nav-item">
-                <a className="nav-link active" href="#">Repositories</a>
-                </li>
-                <li className="nav-item">
-                <a className="nav-link active" href="#">Projects</a>
-                </li>
-                {/* <li className="nav-item">
-                <a className="nav-link disabled" aria-disabled="true">Disabled</a>
-                </li> */}
-            </ul>
+            <li className="nav-item">
+              <button
+                className="nav-link btn btn-link text-light"
+                onClick={() => setActivePath('/markdown/about.md')}
+              >
+                Overview
+              </button>
+            </li>
+            <li className="nav-item">
+              <button
+                className="nav-link btn btn-link text-light"
+                onClick={() => setActivePath('/markdown/projects.md')}
+              >
+                Repositories
+              </button>
+            </li>
+            <li className="nav-item">
+              <button
+                className="nav-link btn btn-link text-light"
+                onClick={() => setActivePath('/markdown/techstack.md')}
+              >
+                Packages
+              </button>
+            </li>
+          </ul>
             </div>
         </div>
         </nav>

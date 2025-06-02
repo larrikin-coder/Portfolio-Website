@@ -3,7 +3,6 @@ import './App.css';
 import { PacmanLoader } from 'react-spinners';
 import Navbar from './components/Navbar';
 import Belowbar from './components/Belowbar';
-import Card from './components/Card';
 import Hero from './components/Hero';
 
 
@@ -36,9 +35,8 @@ function App() {
   return (
     <div className="AppHeader">
       <Navbar />
-      <Belowbar />
-      <Card />
-      <Hero activePath={activePath} setActivePath={setActivePath}/>
+      <Belowbar setActivePath={setActivePath} />
+      <Hero activePath={activePath} />
     </div>
   );
 }
