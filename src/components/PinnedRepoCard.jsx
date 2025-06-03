@@ -9,8 +9,8 @@ const languageColors = {
 const PinnedRepoCard = ({ title, description, language, link }) => {
   return (
     <div
-      className="card bg-dark border-secondary text-light"
-      style={{ width: "18rem", cursor: "pointer" }}
+      className="card bg-dark border-secondary text-light w-100"
+      style={{ cursor: "pointer", minHeight: "140px" }}
     >
       <div className="card-body d-flex flex-column">
         <div className="mb-2 d-flex align-items-center">
@@ -18,7 +18,7 @@ const PinnedRepoCard = ({ title, description, language, link }) => {
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="card-title h5 text-primary mb-0 text-decoration-none"
+            className="card-title h7 text-primary mb-0 text-decoration-none"
           >
             📦 {title}
           </a>

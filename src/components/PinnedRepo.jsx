@@ -10,8 +10,7 @@ const repos = [
   },
   {
     title: "SmartSolve",
-    description:
-      "AI-powered web app to automatically solve handwritten math problems.",
+    description: "AI-powered web app to automatically solve handwritten math problems.",
     language: "TypeScript",
     link: "https://github.com/larrikin-coder/SmartSolve",
   },
@@ -23,8 +22,7 @@ const repos = [
   },
   {
     title: "Saraswati-AI",
-    description:
-      "A chatbot using LLMs to provide contextual answers.",
+    description: "A chatbot using LLMs to provide contextual answers.",
     language: "JavaScript",
     link: "https://github.com/larrikin-coder/Saraswati-AI",
   },
@@ -32,14 +30,22 @@ const repos = [
 
 const PinnedRepos = () => {
   return (
-    <div className="bg-[#0d1117] min-h-screen p-8 text-[#c9d1d9]">
-      <h2 className="text-2xl mb-4">Pinned</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl">
-        {repos.map((repo, index) => (
-          <PinnedRepoCard key={index} {...repo} />
-        ))}
+    <section className="bg-dark text-light py-5">
+      <div className="container">
+        <div className="d-flex justify-content-end">
+          <div style={{ maxWidth: "900px", width: "100%" }}>
+            <h5 className="mb-4">Pinned</h5>
+            <div className="row g-3">
+              {repos.map((repo, index) => (
+                <div key={index} className="col-12 col-md-6 d-flex">
+                  <PinnedRepoCard {...repo} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
