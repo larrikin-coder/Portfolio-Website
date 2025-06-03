@@ -123,7 +123,8 @@
 
 
 # 📊 GitHub Stats:
-<div style="display: flex;">
+
+<div style="display: flex; overflowX:auto">
   <img src="https://github-readme-stats.vercel.app/api?username=larrikin-coder&theme=dark&hide_border=false&include_all_commits=false&count_private=false" style="padding-right: 20px;" />
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=larrikin-coder&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact" style="padding-left: 20px;" height="197px" />
 </div>

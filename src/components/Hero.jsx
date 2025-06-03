@@ -29,14 +29,14 @@ const Hero = ({ activePath, setActivePath }) => {
             height="296"
           />
           <h3 className='text-start'>Shaurya Thapliyal</h3>
-          <p className="text-light-50">@larrikin-coder</p>
-          <em className="small text-light">"Schrödinger's cat was dead. Curiosity was the culprit."</em>
+          <p className="text-light-50">larrikin-coder</p>
+          <div className="">Schrödinger's cat was dead. Curiosity was the culprit.</div>
 
         </div>
 
         {/* Markdown Content */}
         {/* <div className="col-12 col-md-8 p-4 bg-dark overflow-auto"> */}
-        <div className={`col-12 col-md-8 p-4 bg-dark overflow-auto ${isOverview ? 'border border-light mt-5' : ''}`}>
+        <div className={`col-12 col-md-8 p-4 bg-dark overflow-auto ${isOverview ? 'border border-light mt-5 border-rounded-5' : ''}`}>
 
           <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
             {markdownContent}
