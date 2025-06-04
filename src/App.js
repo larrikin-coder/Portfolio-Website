@@ -4,7 +4,6 @@ import { PacmanLoader } from 'react-spinners';
 import Navbar from './components/Navbar';
 import Belowbar from './components/Belowbar';
 import Hero from './components/Hero';
-import PinnedRepos from './components/PinnedRepo';
 
 
 
@@ -38,7 +37,7 @@ function App() {
       <Navbar />
       <Belowbar setActivePath={setActivePath} />
       <Hero activePath={activePath} />
-      <PinnedRepos />
+      {/* <PinnedRepos /> */}
     </div>
   );
 }

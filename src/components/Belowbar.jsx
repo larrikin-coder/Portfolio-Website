@@ -10,7 +10,7 @@ const belowBar=({setActivePath}) => {
             <ul className="navbar-nav">
             <li className="nav-item">
               <button
-                className="nav-link btn btn-link text-light"
+                className="nav-link btn btn-link text-light belowheaderOptions"
                 onClick={() => setActivePath('/markdown/about.md')}
               >
                 Overview
@@ -18,7 +18,7 @@ const belowBar=({setActivePath}) => {
             </li>
             <li className="nav-item">
               <button
-                className="nav-link btn btn-link text-light"
+                className="nav-link btn btn-link text-light belowheaderOptions"
                 onClick={() => setActivePath('/markdown/projects.md')}
               >
                 Repositories
@@ -26,7 +26,7 @@ const belowBar=({setActivePath}) => {
             </li>
             <li className="nav-item">
               <button
-                className="nav-link btn btn-link text-light"
+                className="nav-link btn btn-link text-light belowheaderOptions"
                 onClick={() => setActivePath('/markdown/techstack.md')}
               >
                 Packages
