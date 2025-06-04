@@ -28,9 +28,10 @@ const Hero = ({ activePath, setActivePath }) => {
             width="296"
             height="296"
           />
-          <h3 className='text-start'>Shaurya Thapliyal</h3>
-          <p className="text-light-50">larrikin-coder</p>
-          <div className="">Schrödinger's cat was dead. Curiosity was the culprit.</div>
+          <h3  className='text-start'>Shaurya Thapliyal</h3>
+          <div className="fs-5 fw-light text-body-primary">larrikin-coder [he/him]</div>
+          <div className="mt-2 fs-6 fw-bold text-body-primary">Schrödinger's cat was dead ! Curiosity was the culprit.</div>
+          <button className='btn btn-secondary border border-light text-align-center fs-6 fw-medium mt-4' type="button">Edit profile</button>
 
         </div>
 
