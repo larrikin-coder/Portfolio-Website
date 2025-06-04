@@ -4,7 +4,7 @@ import React from 'react';
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <nav className="navbar navbar-expand-lg top-bar" data-bs-theme="dark">
       <div className="container-fluid">
         <a className="navbar-brand" href="#"><span className='me-2'><img className='d-inline-block align-text-auto' src="/assets/github icon.png" alt="" width='32px' height="32px" /></span>larrikin-coder</a>
         <button

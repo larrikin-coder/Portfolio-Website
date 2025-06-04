@@ -30,7 +30,7 @@ const repos = [
 
 const PinnedRepos = () => {
   return (
-    <section className="bg-dark text-light py-5">
+    <section className="text-light py-5">
       <div className="container">
         <div className="d-flex justify-content-end">
           <div style={{ maxWidth: "900px", width: "100%" }}>

@@ -17,10 +17,10 @@ const Hero = ({ activePath, setActivePath }) => {
 
 
   return (
-    <div className="container-fluid m-0 p-0 bg-dark text-light min-vh-100">
+    <div className="container-fluid m-0 p-0  text-light min-vh-100">
       <div className="row g-0 flex-column flex-md-row ps-5 pe-5">
         {/* Profile Section */}
-        <div className="col-12 col-md-4 bg-dark mt-5 p-4 d-flex flex-column align-items-justify text-start">
+        <div className="col-12 col-md-4 mt-5 p-4 d-flex flex-column align-items-justify text-start">
           <img
             src="assets/icon.png"
             alt="Profile"
@@ -37,7 +37,7 @@ const Hero = ({ activePath, setActivePath }) => {
 
         {/* Markdown Content */}
         {/* <div className="col-12 col-md-8 p-4 bg-dark overflow-auto"> */}
-        <div className={`col-12 col-md-8 p-4 bg-dark overflow-auto ${isOverview ? 'border border-light mt-5 border-rounded-5' : ''}`}>
+        <div className={`col-12 col-md-8 p-4 overflow-auto rounded-2 ${isOverview ? 'border border-secondary mt-5 border-rounded-5' : ''}`}>
 
           <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
             {markdownContent}
