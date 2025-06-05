@@ -11,6 +11,8 @@
     "axios": "^1.9.0",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
+    "framer-motion": "^12.16.0",
+    "github-markdown-css": "^5.8.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-markdown": "^10.1.0",
@@ -22,9 +24,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-  "start": "concurrently \"npm run start-react\" \"npm run start-server\"",
-  "start-react": "react-scripts start",
-  "start-server": "node server/server.js"
+    "start": "concurrently \"npm run start-react\" \"npm run start-server\"",
+    "start-react": "react-scripts start",
+    "start-server": "node server/server.js"
   },
   "proxy": "http://localhost:5000",
   "eslintConfig": {

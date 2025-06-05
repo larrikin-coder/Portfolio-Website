@@ -4,6 +4,7 @@ import { PacmanLoader } from 'react-spinners';
 import Navbar from './components/Navbar';
 import Belowbar from './components/Belowbar';
 import Hero from './components/Hero';
+import "github-markdown-css/github-markdown.css";
 
 
 

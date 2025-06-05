@@ -13,6 +13,7 @@ app.get("/api/contributions/:username", async (req, res) => {
       user(login: "${username}") {
         contributionsCollection {
           contributionCalendar {
+          
             weeks {
               contributionDays {
                 contributionCount
