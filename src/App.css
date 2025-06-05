@@ -27,3 +27,21 @@
 /* .belowheaderOptions:focus{
   border-bottom: 1px solid #238636; 
 } */
+
+.contrib-graph {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+.contrib-week {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contrib-square {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}

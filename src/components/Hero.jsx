@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import PinnedRepos from './PinnedRepo';
+import ContributionGraph from './ContributionsGraph';
 
 const Hero = ({ activePath, setActivePath }) => {
   const [markdownContent, setMarkdownContent] = useState('');
@@ -33,7 +34,13 @@ const Hero = ({ activePath, setActivePath }) => {
           <div className="fs-5 fw-light text-body-primary">larrikin-coder [he/him]</div>
           <div className="mt-2 fs-6 fw-bold text-body-primary">Schrödinger's cat was dead ! Curiosity was the culprit.</div>
           <button className='btn btn-secondary border border-light text-align-center fs-6 fw-medium mt-4' type="button">Edit profile</button>
-
+          <div className='pt-4'><span><img src='assets/icons8-location-48.png' height="16px" width="16px"></img></span>Earth</div>
+          <div className='pt-1'><span><img src='assets/icons8-linkedin-30.png' height="16px" width="16px"></img></span><a href='https://www.linkedin.com/in/shaurya-thapliyal/'>Linkedin</a></div>
+          <div className='pt-1'><span><img src="assets/icons8-instagram-50.png" height="16px" width="16px"></img></span><a href=''>Instagram</a></div>
+          <div className='pt-1'><span><img src="assets/icons8-chain-48.png" height="16px" width="16px"></img></span><a href='https://huggingface.co/larrikin-coder'>Huggingface</a></div>
+          <hr className="border-top border-light opacity-50 mt-4 mb-2" />
+          <h5 className='mt-3'>Achievements</h5>
+          <div><img src='https://github.githubassets.com/assets/pull-shark-default-498c279a747d.png' height="64px" width="64px"></img></div>
         </div>
 
         {/* Markdown Content */}
@@ -48,6 +55,13 @@ const Hero = ({ activePath, setActivePath }) => {
 
         {/* Conditionally show PinnedRepos on overview */}
         {isOverview && <PinnedRepos />}
+        {isOverview && (
+          <div className='border border-light rounded-2 p-4'>
+            <ContributionGraph username="larrikin-coder" />
+          </div>
+        )}
+
+
 </div>
 
 
