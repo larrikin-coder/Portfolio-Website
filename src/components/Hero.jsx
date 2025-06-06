@@ -4,6 +4,7 @@ import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import PinnedRepos from './PinnedRepo';
 import ContributionGraph from './ContributionsGraph';
+import Repolist from './Repolist';
 
 const Hero = ({ activePath, setActivePath }) => {
   const [markdownContent, setMarkdownContent] = useState('');
@@ -16,7 +17,7 @@ const Hero = ({ activePath, setActivePath }) => {
   }, [activePath]);
 
   const isOverview = activePath.includes('about.md');
-
+  const isRepositories = activePath.includes('projects.md');
 
   return (
     <div className="container-fluid m-0 p-0  text-light min-vh-100">
@@ -62,11 +63,13 @@ const Hero = ({ activePath, setActivePath }) => {
 
         {/* Conditionally show PinnedRepos on overview */}
         {isOverview && <PinnedRepos />}
+        {isRepositories && <Repolist />}
         {isOverview && (
           <div className='border border-light rounded-2 p-4'>
             <ContributionGraph username="larrikin-coder" />
           </div>
         )}
+
 
 
         </div>
