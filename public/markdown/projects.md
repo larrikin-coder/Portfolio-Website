@@ -1,4 +1,4 @@
-# 🚀 Projects
+<!-- # 🚀 Projects
 
 ## 📚 Bibliotheca
 A clean, minimalistic UI application for polyglots to enhance language skills.  
@@ -21,4 +21,4 @@ A collaborative hybrid recommendation e-commerce platform.
 
 ## ☁️ Narada-AI
 Landing page + backend integration for a cloud hybrid recommender system.  
-**Stack:** React, Tailwind, Python backend.
+**Stack:** React, Tailwind, Python backend. -->

@@ -53,7 +53,7 @@ const Hero = ({ activePath, setActivePath }) => {
           style={{ overflowX: "auto", maxWidth: "100%" }}
         >
           <div className="markdown-body" style={{ padding: "2rem", overflowX: "auto" }}>
-            <div className='fs-7 fw-light pt-0'>larrikin-coder/README.md</div>
+            {isOverview && (<div className='fs-7 fw-light pt-0'>larrikin-coder/README.md</div>)}
             <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
               {markdownContent}
             </ReactMarkdown>

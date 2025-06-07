@@ -1,17 +1,14 @@
-import { useState,useEffect} from 'react';
-import './App.css';
-import { PacmanLoader } from 'react-spinners';
-import Navbar from './components/Navbar';
-import Belowbar from './components/Belowbar';
-import Hero from './components/Hero';
+import { useState, useEffect } from "react";
+import "./App.css";
+import { PacmanLoader } from "react-spinners";
+import Navbar from "./components/Navbar";
+import Belowbar from "./components/Belowbar";
+import Hero from "./components/Hero";
 import "github-markdown-css/github-markdown.css";
-
-
-
 
 function App() {
   //active state for markdown content
-  const [activePath, setActivePath] = useState('/markdown/about.md');
+  const [activePath, setActivePath] = useState("/markdown/about.md");
   //Loading Screen
   let [loading, setLoading] = useState(true);
   useEffect(() => {
