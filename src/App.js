@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar";
 import Belowbar from "./components/Belowbar";
 import Hero from "./components/Hero";
 import "github-markdown-css/github-markdown.css";
+import {Routes,Route} from "react-router-dom";
+
 
 function App() {
   //active state for markdown content
@@ -34,9 +36,16 @@ function App() {
     <div className="AppHeader">
       <Navbar />
       <Belowbar setActivePath={setActivePath} />
-      <Hero activePath={activePath} />
+      <Routes>
+        {/* <Hero activePath={activePath} /> */}
+        <Route path="/" element={<Hero activePath={activePath} />} />
+
+        <Route path="/repositories" element={<Hero activePath="markdown/projects.md" />} />
+        <Route path="/techstack" element={<Hero activePath="markdown/techstack.md" />} />
+      </Routes>
       {/* <PinnedRepos /> */}
     </div>
+
   );
 }
 
