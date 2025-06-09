@@ -26,9 +26,13 @@ const Hero = ({activePath,setActivePath}) => {
   // const activePath = pathMap[location.pathname] || '/markdown/about.md';
   const isOverview = activePath.includes('about.md');
   const isRepositories = activePath.includes('projects.md');
+  const isTechStack = activePath.includes('techstack.md');
+
   console.log('Active Path:', activePath);
   console.log('Is Overview:', isOverview);
   console.log('Is Repositories:', isRepositories);
+
+  
 
   useEffect(() => {
     fetch(activePath)
@@ -64,18 +68,17 @@ const Hero = ({activePath,setActivePath}) => {
 
         {/* Markdown Content Section */}
         <div className="col-12 col-md-8 p-4 pe-5 overflow-auto mt-2">
-          <div
-            className={`p-4 rounded-2 ${isOverview ? 'border border-secondary' : ''}`}
-            style={{ overflowX: "auto", maxWidth: "100%" }}
-          >
-            <div className="markdown-body" style={{ padding: "2rem", overflowX: "auto" }}>
-              {isOverview && (<div className="fs-7 fw-light pt-0">larrikin-coder/README.md</div>)}
+        {(isOverview || isTechStack) && (
+          <div className="p-4 rounded-2 border border-secondary" style={{ overflowX: "auto" }}>
+            <div className="markdown-body" style={{ padding: "2rem" }}>
               <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
                 {markdownContent}
               </ReactMarkdown>
             </div>
           </div>
+        )}
 
+        <>
           {isOverview && <PinnedRepos />}
           {isRepositories && <Repolist />}
           {isOverview && (
@@ -83,7 +86,9 @@ const Hero = ({activePath,setActivePath}) => {
               <ContributionGraph username="larrikin-coder" />
             </div>
           )}
-        </div>
+        </>
+      </div>
+
       </div>
     </div>
   );
