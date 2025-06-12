@@ -60,7 +60,7 @@ const ContributionGraph = ({ username }) => {
         {/* Contribution squares */}
         <div className="d-flex">
           {contributions.map((week, i) => (
-            <div key={i} className="d-flex flex-column me-1">
+            <div key={i} className="d-flex flex-column" style={{marginRight: "0.2rem"}}>
               {week.map((count, j) => (
                 <motion.div
                   key={j}

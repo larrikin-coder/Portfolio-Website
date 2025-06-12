@@ -44,7 +44,7 @@
   width: 10px;
   height: 10px;
   border-radius: 2px;
-  margin-bottom: 2px
+  margin-bottom: 0.2rem
 }
 
 
@@ -80,4 +80,10 @@ body {
   fill: #9198a1;
   height: 16px;
   width: 16px;
+}
+
+
+.navFS{
+  font-size: 14px;
+  font-weight: 600;
 }
