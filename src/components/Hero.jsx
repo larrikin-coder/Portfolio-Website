@@ -82,7 +82,7 @@ const Hero = ({activePath,setActivePath}) => {
         <>
           {isOverview && <PinnedRepos />}
           {isRepositories && <Repolist />}
-          {isTechStack && <Resume file="/assets/resume.pdf"/>}
+          {/* {isTechStack && <Resume file="/assets/resume.pdf"/>} */}
           {isOverview && (
             <div className="border border-light rounded-2 p-4 mt-3">
               <ContributionGraph username="larrikin-coder" />
