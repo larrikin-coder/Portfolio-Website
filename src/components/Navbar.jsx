@@ -20,6 +20,7 @@ const Navbar = () => {
         </button> */}
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
+
           <button className='btn'><img src='/assets/icons8-download-48.png' alt="img" className="d-inline-block align-text-top" height='32px' width='32px'/></button>
         </div>
       </div>
