@@ -90,6 +90,7 @@ const Hero = ({activePath,setActivePath}) => {
       </div>
 
       </div>
+      
     </div>
   );
 };
