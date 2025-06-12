@@ -6,6 +6,7 @@ import rehypeRaw from 'rehype-raw';
 import PinnedRepos from './PinnedRepo';
 import ContributionGraph from './ContributionsGraph';
 import Repolist from './Repolist';
+import Resume from './Resume';
 
 const Hero = ({activePath,setActivePath}) => {
   // const location = useLocation();
@@ -68,7 +69,7 @@ const Hero = ({activePath,setActivePath}) => {
 
         {/* Markdown Content Section */}
         <div className="col-12 col-md-8 p-4 pe-5 overflow-auto mt-2">
-        {(isOverview || isTechStack) && (
+        {(isOverview ) && (
           <div className="p-4 rounded-2 border border-secondary" style={{ overflowX: "auto" }}>
             <div className="markdown-body" style={{ padding: "2rem" }}>
               <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
@@ -81,6 +82,7 @@ const Hero = ({activePath,setActivePath}) => {
         <>
           {isOverview && <PinnedRepos />}
           {isRepositories && <Repolist />}
+          {isTechStack && <Resume file="/assets/resume.pdf"/>}
           {isOverview && (
             <div className="border border-light rounded-2 p-4 mt-3">
               <ContributionGraph username="larrikin-coder" />
@@ -90,7 +92,7 @@ const Hero = ({activePath,setActivePath}) => {
       </div>
 
       </div>
-      
+
     </div>
   );
 };
