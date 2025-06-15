@@ -59,9 +59,9 @@ const Hero = ({activePath,setActivePath}) => {
           <div className="mt-2 fs-6 fw-bold text-body-primary">Schrödinger's cat was dead! Curiosity was the culprit.</div>
           <button className="btn buttoff btn-dark border border-dark text-align-center fs-6 fw-medium mt-4" type="button">Edit profile</button>
           <div className="pt-4"><img src="assets/icons8-location-48.png" className="me-1" height="16px" width="16px" alt="Location" />Earth</div>
-          <div className="pt-1"><img src="assets/icons8-linkedin-30.png" className="me-1" height="16px" width="16px" alt="LinkedIn" /><a href="https://www.linkedin.com/in/shaurya-thapliyal/">LinkedIn</a></div>
-          <div className="pt-1"><img src="assets/icons8-instagram-50.png" className="me-1" height="16px" width="16px" alt="Instagram" /><a href="">Instagram</a></div>
-          <div className="pt-1"><img src="assets/icons8-chain-48.png" className="me-1" height="16px" width="16px" alt="HuggingFace" /><a href="https://huggingface.co/larrikin-coder">Huggingface</a></div>
+          <div className="pt-1"><img src="assets/icons8-linkedin-30.png" className="me-1" height="16px" width="16px" alt="LinkedIn" /><a style={{textDecoration:"none",color:"inherit"}}href="https://www.linkedin.com/in/shaurya-thapliyal/">in/ shaurya-thapliyal</a></div>
+          <div className="pt-1"><img src="assets/icons8-instagram-50.png" className="me-1" height="16px" width="16px" alt="Instagram" /><a style={{textDecoration:"none",color:"inherit"}} href="">_shaurya.thapliyal</a></div>
+          <div className="pt-1"><img src="assets/icons8-chain-48.png" className="me-1" height="16px" width="16px" alt="HuggingFace" /><a style={{textDecoration:"none",color:"inherit"}} href="https://huggingface.co/larrikin-coder">https://huggingface.co/larrikin-coder</a></div>
           <hr className="border-top border-light opacity-50 mt-4 mb-2" />
           <h5 className="mt-3">Achievements</h5>
           <div><img src="https://github.githubassets.com/assets/pull-shark-default-498c279a747d.png" height="64px" width="64px" alt="Achievement badge" /></div>

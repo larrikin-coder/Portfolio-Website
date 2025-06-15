@@ -44,7 +44,7 @@ const Repolist = () => {
   return (
     <div className="container mt-4">
       {/* Filter Controls */}
-      <div className="d-flex flex-wrap gap-2 mb-4 align-items-center">
+      <div className="d-flex flex-wrap gap-2 mb-4 align-items-center border-bottom border-subtle-secondary py-4">
         <input
           type="text"
           className="form-control form-control-sm"
