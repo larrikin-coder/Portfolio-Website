@@ -7,6 +7,8 @@ import Hero from "./components/Hero";
 import "github-markdown-css/github-markdown.css";
 import {Routes,Route} from "react-router-dom";
 import MyIssues from "./components/MyIssues";
+import CopilotChatInterface from "./components/CoPilot";
+
 
 function App() {
   //active state for markdown content
@@ -48,10 +50,8 @@ function App() {
           path="/techstack"
           element={<Hero activePath="markdown/techstack.md" />}
         />
-        <Route
-          path="/MyIssues"
-          element={<MyIssues/>}
-        />
+        <Route path="/MyIssues" element={<MyIssues />} />
+        <Route path="/Copilot" element={<CopilotChatInterface />} />
       </Routes>
       {/* <PinnedRepos /> */}
     </div>
