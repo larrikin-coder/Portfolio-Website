@@ -42,7 +42,7 @@ const Repolist = () => {
   });
 
   return (
-    <div className="container mt-4">
+    <div className="container">
       {/* Filter Controls */}
       <div className="d-flex flex-wrap gap-2 mb-4 align-items-center border-bottom border-subtle-secondary py-4">
         <input
@@ -56,7 +56,7 @@ const Repolist = () => {
 
         <select
           className="form-select form-select-sm"
-          style={{ maxWidth: '80px',backgroundColor:"#212830",color:"#c9d1d9",borderColor:"#30363d",borderRadius:"6px",fontSize:"14px",fontWeight:"500" }}
+          style={{ maxWidth: '100px',backgroundColor:"#212830",color:"#c9d1d9",borderColor:"#30363d",borderRadius:"6px",fontSize:"14px",fontWeight:"500",textAlign:"center" }}
           value={type}
           onChange={(e) => setType(e.target.value)}
         >
@@ -120,5 +120,7 @@ const Repolist = () => {
     </div>
   );
 };
+
+
 
 export default Repolist;

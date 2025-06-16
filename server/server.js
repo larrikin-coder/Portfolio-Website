@@ -82,6 +82,33 @@ app.get("/api/repos/:username", async (req, res) => {
     }
 
 });
+app.get("/api/issues", async (req, res) => {
+  try {
+    const response = await axios.get("https://api.github.com/issues", {
+      headers: {
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        Accept: "application/vnd.github+json",
+      },
+      params: {
+        per_page: 100, // Optional: fetch more issues at once
+      },
+    });
+
+    const issues = response.data.map((issue) => ({
+      id: issue.id,
+      title: issue.title,
+      repo: issue.repository.full_name,
+      url: issue.html_url,
+      state: issue.state,
+      created_at: issue.created_at,
+    }));
+
+    res.json(issues);
+  } catch (error) {
+    console.error(error.response?.data || error.message);
+    res.status(500).json({ error: "Failed to fetch issues" });
+  }
+});
 
 
 

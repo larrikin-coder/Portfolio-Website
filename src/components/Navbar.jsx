@@ -1,7 +1,5 @@
-import React from 'react';
- 
-
-
+import React from 'react'
+import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg top-bar" data-bs-theme="dark">
@@ -32,7 +30,7 @@ const Navbar = () => {
             <path d="M6.25 9.037a.75.75 0 0 1 .75.75v1.501a.75.75 0 0 1-1.5 0V9.787a.75.75 0 0 1 .75-.75Zm4.25.75v1.501a.75.75 0 0 1-1.5 0V9.787a.75.75 0 0 1 1.5 0Z"></path>
           </svg>
         </button>
-        <button className="btn btn-outline-secondary ms-2 d-flex justify-content-center align-items-center"  style={{height:"32px",width:"32px",backgroundColor:"#010409",padding:"0"}} type="submit">
+        <button className="btn btn-outline-secondary ms-2 d-flex justify-content-center align-items-center"  style={{height:"32px",width:"32px",backgroundColor:"#010409",padding:"0"}} onClick={() => navigate("/MyIssues")} type="submit">
           <svg fill='#9198a1' style={{width:"16px",height:"16px"}} viewBox="0 0 16 16">
           <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
           <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path>
