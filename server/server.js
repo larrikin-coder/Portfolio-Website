@@ -7,7 +7,12 @@ const cors = require("cors");
 require("dotenv").config({ path: "./server/.env" });
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://portfolio-website-rho-sand.vercel.app",
+    credentials: true,
+  })
+);
 app.use(express.json());
 const PORT = process.env.PORT || 5000;
 console.log(process.env.GITHUB_TOKEN);
