@@ -4,6 +4,7 @@ const { desc } = require("framer-motion/client");
 require("dotenv").config({ path: "./server/.env" });
 
 const app = express();
+app.use(express.json());
 const PORT = process.env.PORT || 5000;
 console.log(process.env.GITHUB_TOKEN);
 app.get("/api/contributions/:username", async (req, res) => {
@@ -110,6 +111,56 @@ app.get("/api/issues", async (req, res) => {
   }
 });
 
+const GEMINI_API_URL =
+  "https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent";
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
+app.post("/api/chat", async (req, res) => {
+  const { message, model } = req.body;
+
+  // Only use Gemini if the model is gemini-2-flash (from your models array)
+  if (model === "gemini-2-flash") {
+    try {
+      const geminiRes = await axios.post(
+        `${GEMINI_API_URL}?key=${GEMINI_API_KEY}`,
+        {
+          contents: [{ parts: [{ text: message }] }],
+        }
+      );
+      const aiText =
+        geminiRes.data.candidates?.[0]?.content?.parts?.[0]?.text ||
+        "Sorry, I couldn't generate a response.";
+      const aiResponse = {
+        id: Date.now() + 1,
+        text: aiText,
+        timestamp: new Date(),
+        model: model,
+        isUser: false,
+      };
+      console.log("Gemini response:", aiResponse);
+      return res.json({ aiMessage: aiResponse });
+    } catch (err) {
+      console.error("Gemini API error:", err?.response?.data || err.message);
+      return res
+        .status(500)
+        .json({ error: "Error communicating with Gemini API." });
+    }
+  }
+
+  // Fallback: Simulated response for other models
+  const aiResponse = {
+    id: Date.now() + 1,
+    text: "I'm a demo AI assistant. This is a simulated response to show how the interface works!",
+    timestamp: new Date(),
+    model: model,
+    isUser: false,
+  };
+
+  res.json({ aiMessage: aiResponse });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

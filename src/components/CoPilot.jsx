@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import axios from "axios";
 import {
   MessageSquare,
   Plus,
@@ -69,7 +70,7 @@ export default function CopilotChatInterface() {
     }
   }, [currentConversation, conversations]);
 
-  function sendMessage() {
+  async function sendMessage() {
     if (!message.trim()) return;
     const newMsg = {
       id: Date.now(),
@@ -78,19 +79,12 @@ export default function CopilotChatInterface() {
       model: selectedModel,
       isUser: true,
     };
-    const aiMsg = {
-      id: Date.now() + 1,
-      text:
-        "I'm a demo AI assistant. This is a simulated response to show how the interface works!",
-      timestamp: new Date(),
-      model: selectedModel,
-      isUser: false,
-    };
+
     let updatedConvs, newCurrent;
     if (currentConversation) {
       updatedConvs = conversations.map((c) =>
         c.id === currentConversation.id
-          ? { ...c, messages: [...c.messages, newMsg, aiMsg] }
+          ? { ...c, messages: [...c.messages, newMsg] }
           : c
       );
       newCurrent = updatedConvs.find((c) => c.id === currentConversation.id);
@@ -99,7 +93,7 @@ export default function CopilotChatInterface() {
         id: Date.now(),
         title:
           message.slice(0, 50) + (message.length > 50 ? "..." : ""),
-        messages: [newMsg, aiMsg],
+        messages: [newMsg],
         createdAt: new Date(),
       };
       updatedConvs = [newConv, ...conversations];
@@ -108,6 +102,25 @@ export default function CopilotChatInterface() {
     setConversations(updatedConvs);
     setCurrentConversation(newCurrent);
     setMessage("");
+    try{
+      const res = await axios.post("/api/chat",{
+        message: newMsg.text,
+        model: selectedModel,
+      });
+      const aiMsg = res.data.aiMessage;
+      setConversations((prevConvs) =>
+        prevConvs.map((c) =>
+          c.id === newCurrent.id
+            ? { ...c, messages: [...c.messages, aiMsg] }
+            : c
+        )
+      );
+      setCurrentConversation((prev) =>
+        prev ? { ...prev, messages: [...prev.messages, aiMsg] } : prev
+      );
+    }catch(err){
+      console.log("error:",err)
+    }
   }
 
   function handleKeyDown(e) {
@@ -256,7 +269,7 @@ export default function CopilotChatInterface() {
                     <div style={{ maxWidth: "70%" }}>
                       <div className="small text-muted mb-1">
                         {isUser ? "You" : model?.name || "AI"} ·{" "}
-                        {msg.timestamp.toLocaleTimeString([], {
+                        {new Date(msg.timestamp).toLocaleTimeString([], {
                           hour: "2-digit",
                           minute: "2-digit",
                         })}
