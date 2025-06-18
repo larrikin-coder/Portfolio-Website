@@ -1,9 +1,13 @@
 const express = require("express");
 const axios = require("axios");
 const { desc } = require("framer-motion/client");
+const cors = require("cors");
+
+
 require("dotenv").config({ path: "./server/.env" });
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 const PORT = process.env.PORT || 5000;
 console.log(process.env.GITHUB_TOKEN);
