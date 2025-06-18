@@ -3,6 +3,7 @@ import axios from 'axios';
 import { motion } from 'framer-motion';
 // import './ContributionGraph.css';
 
+
 const days = ['Mon', '', 'Wed', '', 'Fri', '', ''];
 const months = [
   'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
@@ -13,7 +14,7 @@ const ContributionGraph = ({ username }) => {
   const [contributions, setContributions] = useState([]);
 
   useEffect(() => {
-    axios.get(`/api/contributions/${username}`)
+    axios.get(`${process.env.REACT_APP_API_URL}/api/contributions/${username}`)
       .then(res => setContributions(res.data))
       .catch(err => console.error(err));
   }, [username]);

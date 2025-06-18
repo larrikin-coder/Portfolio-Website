@@ -103,7 +103,7 @@ export default function CopilotChatInterface() {
     setCurrentConversation(newCurrent);
     setMessage("");
     try{
-      const res = await axios.post("/api/chat",{
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/chat`,{
         message: newMsg.text,
         model: selectedModel,
       });

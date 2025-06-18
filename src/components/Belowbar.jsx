@@ -9,7 +9,7 @@ const Belowbar = () => {
   useEffect(() => {
       const fetchRepos = async (username) => {
         try {
-          const res = await fetch(`/api/repos/${username}`);
+          const res = await fetch(`${process.env.REACT_APP_API_URL}/api/repos/${username}`);
           const data = await res.json();
           setRepos(data);
         } catch (error) {

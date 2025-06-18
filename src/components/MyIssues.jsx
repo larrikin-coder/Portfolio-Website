@@ -9,7 +9,7 @@ const MyIssues = () => {
   useEffect(() => {
     const fetchIssues = async () => {
       try {
-        const response = await axios.get("/api/issues");
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/issues`);
         setIssues(response.data);
       } catch (err) {
         setError(err.response?.data?.error || "Failed to fetch issues");
