@@ -16,8 +16,18 @@ function App() {
   //Loading Screen
   let [loading, setLoading] = useState(true);
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
-    return () => clearTimeout(timer);
+    // const timer = setTimeout(() => setLoading(false), 2000);
+    // return () => clearTimeout(timer);
+    fetch("https://portfolio-website-tdvz.onrender.com")
+    .then((res)=>res.json())
+    .then((json)=>{
+      // setData(json);
+      setLoading(false);
+    })
+    .catch((err)=>{
+      console.error("Error fetching data:", err);
+      setLoading(false);
+    })
   }, []);
 
   if (loading) {
@@ -30,7 +40,7 @@ function App() {
           height: "100vh",
         }}
       >
-        <PacmanLoader color="#7739c7" />
+        <PacmanLoader color="#212830" />
       </div>
     );
   }
